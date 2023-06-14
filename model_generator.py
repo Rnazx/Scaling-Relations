@@ -53,8 +53,10 @@ cs = (gamma*boltz*T/(mu*mh))**Rational(1/2)
 def model_gen(model_no, let, tbool = True, alphareg = 1):
     def find_hlut(model_no, let):
         def choose_lreg(h, model_no):
+            # dependence of gas density on scale height(h) 
             rho = sigma/(2*h)
-            n = rho/((14/11)*mh)
+            # number density
+            n = rho/(mu*mh)
             if [3, 4].count(model_no)>0 :
                 lsn = 0.14*cm_kpc*(E51)**Fraction(16, 51) * (n/0.1)**Fraction(-19, 51)*(cs/(cm_km*10))**Fraction(-1, 3)
                 l = (3/10)*lsn
