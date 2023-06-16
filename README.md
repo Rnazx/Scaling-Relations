@@ -9,7 +9,7 @@ Mean and random components of the magnetic field are modelled based on the follo
 ![obs](https://github.com/Rnazx/Scaling-Relations/assets/42196798/bb3e29fe-9bc9-4374-876b-fe5da0455514)
 
 For different regimes of the model, the turbulence and magnetic field models are solved in the [jupyter notebook](https://github.com/Rnazx/Scaling-Relations/blob/master/scaling_relations.ipynb). Different regimes of the model can be chosen in the notebook from the python widgets. 
-* The model for the scale height inpired by Rodrigues et. al. (2019) is given by
+* The model for the scale height inpired by Forbes et. al. (2012) is given by
 ```math
   h= \frac{w^2}{3\pi G \Sigma_{tot}}
 ```
