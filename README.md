@@ -11,9 +11,9 @@ Mean and random components of the magnetic field are modelled based on the follo
 For different regimes of the model, the turbulence and magnetic field models are solved in the [jupyter notebook](https://github.com/Rnazx/Scaling-Relations/blob/master/scaling_relations.ipynb). Different regimes of the model can be chosen in the notebook from the python widgets. 
 * The model for the scale height inpired by Forbes et. al. (2012) is given by
 ```math
-  h= \frac{w^2}{3\pi G \Sigma_{tot}}
+  h= \frac{\zeta w^2}{3\pi G \Sigma_{tot}}
 ```
-where $`w`$ is chosen to be $`u`$ which is the turbulent velocity or $`c_s`$ which is the sound speed depending on whether the turbulence is subsonic or supersonic.
+where $1\lesssim\zeta\lesssim20$ is a parameter, $`w`$ is chosen to be $`u`$ which is the turbulent velocity or $`c_s`$ which is the sound speed depending on whether the turbulence is subsonic or supersonic.
 An alternate model is also included where 
 ```math
   h= \frac{c_s}{\Omega}
