@@ -7,7 +7,7 @@ Mean and random components of the magnetic field are modelled based on the follo
 * matplotlib
 * ipywidgets
 ## Code Description
-For different regimes of the model, the turbulence and magnetic field models are solved in the [jupyter notebook](https://github.com/Rnazx/Scaling-Relations/blob/master/scaling_relations.ipynb). Different regimes of the model can be chosen inthe notebook from the python widgets. 
+For different regimes of the model, the turbulence and magnetic field models are solved in the [jupyter notebook](https://github.com/Rnazx/Scaling-Relations/blob/master/scaling_relations.ipynb). Different regimes of the model can be chosen in the notebook from the python widgets. 
 * The model for the scale height inpired by Rodrigues et. al. (2019) is given by
 ```math
   h= \frac{w^2}{3\pi G \Sigma_{tot}}
