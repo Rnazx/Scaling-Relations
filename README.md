@@ -4,7 +4,7 @@ A general framework to find the scaling relations between magnetic field propert
 * sympy
 * matplotlib
 * ipywidgets
-## Code Description
+## Code Overview
 Mean and random components of the magnetic field are modelled based on the following observables:
 ![obs](https://github.com/Rnazx/Scaling-Relations/assets/42196798/bb3e29fe-9bc9-4374-876b-fe5da0455514)
 
@@ -13,7 +13,7 @@ The turbulence and magnetic field models are solved in the [jupyter notebook](ht
 ```math
   h= \frac{\zeta w^2}{3\pi G \Sigma_{tot}},
 ```
-where $1\lesssim\zeta\lesssim20$ is a parameter and $w=\max(u,c_\mathrm{s}$.
+where $1\lesssim\zeta\lesssim20$ is a parameter and $w=\max(u,c_\mathrm{s})$.
 An alternative model is also included where 
 ```math
   h= \frac{c_s}{\Omega}
@@ -28,3 +28,5 @@ An alternative model is also included where
 ```math
   \frac{\partial \log(quantity)}{\partial \log(observable)}
 ```
+## Instructions to run the code
+
