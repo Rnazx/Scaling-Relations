@@ -29,4 +29,4 @@ An alternative model is also included where
   \frac{\partial \log(quantity)}{\partial \log(observable)}
 ```
 ## Instructions to run the code
-
+This repository consists of two main routines. All the expressions are symbollically evaluated in the [model_generator.py](https://github.com/Rnazx/Scaling-Relations/blob/master/model_generator.py) file using the model_gen function. This function takes in the model number and other regimes as descirbed in the manuscript. This function is then used in the [jupyter notebook file](scaling_relations.ipynb)
