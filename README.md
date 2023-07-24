@@ -33,8 +33,20 @@ This repository consists of two main routines. All the expressions are symbolica
 The model number and the letter are automatically chosen from the selection in the widgets. The following are the steps needed to find the scaling relations. The instructions below are given in the order of the blocks of code in the [jupyter notebook file](scaling_relations.ipynb).
 * **Import Dependencies:**
 <details>
-  <summary>Click to view image</summary>
+  <summary>yo</summary>
+  <details>
+    
+  <summary>Model 1</summary>
   
   ![Image Alt Text](scaling_relation_plots/scalBbar1.png)
+
+  </details>
+  
+  <details>
+    <summary>Helllo</summary>
+    Hi hi
+  </details>
   
 </details>
+<!-- [<kbd> <br> Title <br> </kbd>][scaling_relation_plots/scalBbar1.png] -->
+[<kbd> <br> KeyBinding Button <br> </kbd>][KBD]
