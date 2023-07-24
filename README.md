@@ -49,4 +49,4 @@ The model number and the letter are automatically chosen from the selection in t
   
 </details>
 <!-- [<kbd> <br> Title <br> </kbd>][scaling_relation_plots/scalBbar1.png] -->
-[<kbd> <br> KeyBinding Button <br> </kbd>][KBD]
+[<kbd> <br> KeyBinding Button <br> </kbd>][[KBD](https://github.com/Rnazx/Scaling-Relations/blob/master/README.md)https://github.com/Rnazx/Scaling-Relations/blob/master/README.md]
