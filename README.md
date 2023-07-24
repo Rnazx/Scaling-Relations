@@ -35,6 +35,6 @@ The model number and the letter are automatically chosen from the selection in t
 <details>
   <summary>Click to view image</summary>
   
-  ![Image Alt Text](https://path-to-your-image-file.png)
+  ![Image Alt Text](scaling_relation_plots/scalBbar1.png)
   
 </details>
