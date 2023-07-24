@@ -32,4 +32,9 @@ An alternative model is also included where
 This repository consists of two main routines. All the expressions are symbolically evaluated in the [model_generator.py](https://github.com/Rnazx/Scaling-Relations/blob/master/model_generator.py) file using the model_gen function. This function takes in the model number and other regimes described in the manuscript. This function is then used in the [jupyter notebook file](scaling_relations.ipynb) to find the  expression per the chosen regime. We have seven different regimes as described in the manuscript. (describe all the regimes?)
 The model number and the letter are automatically chosen from the selection in the widgets. The following are the steps needed to find the scaling relations. The instructions below are given in the order of the blocks of code in the [jupyter notebook file](scaling_relations.ipynb).
 * **Import Dependencies:**
-[![View on GitHub](https://img.shields.io/badge/View%20on-GitHub-brightgreen?style=flat-square&logo=github)](https://github.com/your-username/your-repo)
+<details>
+  <summary>Click to view image</summary>
+  
+  ![Image Alt Text](https://path-to-your-image-file.png)
+  
+</details>
