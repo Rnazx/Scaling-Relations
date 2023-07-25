@@ -1,3 +1,21 @@
+<style>
+  .button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #45a049;
+  }
+</style>
 # Scaling Relations Finder
 A general framework to find the scaling relations between magnetic field properties and observables for a model of galactic magnetic fields
 ### Libraries Used
@@ -29,12 +47,45 @@ An alternative model is also included where
   \frac{\partial \log(quantity)}{\partial \log(observable)}
 ```
 ## Instructions to run the code
-This repository consists of two main routines. All the expressions are symbolically evaluated in the [model_generator.py](https://github.com/Rnazx/Scaling-Relations/blob/master/model_generator.py) file using the model_gen function. This function takes in the model number and other regimes described in the manuscript. This function is then used in the [jupyter notebook file](scaling_relations.ipynb) to find the  expression per the chosen regime. We have seven different regimes as described in the manuscript. (describe all the regimes?)
+This repository consists of two main routines. All the expressions are symbolically evaluated in the [model_generator.py](model_generator.py) file using the model_gen function. This function takes in the model number and other regimes described in the manuscript. This function is then used in the [jupyter notebook file](scaling_relations.ipynb) to find the  expression per the chosen regime. We have seven different regimes as described in the manuscript. (describe all the regimes?)
 The model number and the letter are automatically chosen from the selection in the widgets. The following are the steps needed to find the scaling relations. The instructions below are given in the order of the blocks of code in the [jupyter notebook file](scaling_relations.ipynb).
 * **Import Dependencies:**
+
+<details>
+  <summary> Model 1 </summary>
+
+  <blockquote>
+
+<details>
+  <summary> $h$ </summary>
+  
+  ![Image Alt Text](scaling_relation_plots/scalh1.png)
+  
+</details>
+  <details>
+    <summary> $l$ </summary>
+  </details>
+  <details>
+    <summary> $u$ </summary>
+  </details>
+  <details>
+    <summary> $\tau$ </summary>
+  </details>
+  <details>
+    <summary> $b_{\mathrm{iso}}$ </summary>
+  </details>
+  <blockquote>
+  </blockquote>
+
+</details>
 <details>
   <summary>Click to view image</summary>
   
-  ![Image Alt Text](https://path-to-your-image-file.png)
+  ![Image Alt Text](scaling_relation_plots/scalh1.png)
   
 </details>
+<!-- Button 1 -->
+<a href="https://www.example.com" class="button">Button 1</a>
+
+<!-- Button 2 -->
+<a href="https://www.example2.com" class="button">Button 2</a>
