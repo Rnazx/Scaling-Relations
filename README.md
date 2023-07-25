@@ -1,21 +1,4 @@
-<style>
-  .button {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-right: 10px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
 
-  .button:hover {
-    background-color: #45a049;
-  }
-</style>
 # Scaling Relations Finder
 A general framework to find the scaling relations between magnetic field properties and observables for a model of galactic magnetic fields
 ### Libraries Used
@@ -89,3 +72,65 @@ The model number and the letter are automatically chosen from the selection in t
 
 <!-- Button 2 -->
 <a href="https://www.example2.com" class="button">Button 2</a>
+<!-- Center align the content -->
+<div align="center">
+
+<!-- Create an HTML table with 3 rows -->
+<table style="border-collapse: collapse; width: 100%;">
+    <tr>
+        <!-- Empty cell for the top row -->
+        <tr></tr>
+        <!-- Button for the top row -->
+        <td align="center" colspan="4">
+            <a href="scaling_relation_plots/Model%201" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model 1
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <!-- Button for the second row -->
+        <td align="center" colspan="2">
+            <a href="https://example.com/link2" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model 2a
+            </a>
+        </td>
+        <!-- Button for the second row -->
+        <td align="center" colspan="2">
+            <a href="https://example.com/link3" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model 2b
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <!-- Button for the third row -->
+        <td align="center" colspan="2">
+            <a href="https://example.com/link4" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Button 4
+            </a>
+        </td>
+        <!-- Button for the third row -->
+        <td align="center" colspan="1">
+            <a href="https://example.com/link5" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Button 5
+            </a>
+        </td>
+        <!-- Button for the third row -->
+        <td align="center" colspan="1">
+            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Button 6
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <!-- Empty cell for the bottom row -->
+        <td></td>
+        <!-- Button for the bottom row -->
+        <td align="center" colspan="2">
+            <a href="https://example.com/link7" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Button 7
+            </a>
+        </td>
+    </tr>
+</table>
+
+</div>
