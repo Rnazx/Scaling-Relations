@@ -56,13 +56,13 @@ The model number and the letter are automatically chosen from the selection in t
     <tr>
         <!-- Button for the second row -->
         <td align="center" colspan="4">
-            <a href="https://example.com/link2" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_2a/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 2a
             </a>
         </td>
         <!-- Button for the second row -->
         <td align="center" colspan="4">
-            <a href="https://example.com/link3" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_2b/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 2b
             </a>
         </td>
