@@ -34,31 +34,7 @@ This repository consists of two main routines. All the expressions are symbolica
 The model number and the letter are automatically chosen from the selection in the widgets. The following are the steps needed to find the scaling relations. The instructions below are given in the order of the blocks of code in the [jupyter notebook file](scaling_relations.ipynb).
 * **Import Dependencies:**
 
-<details>
-  <summary> Model 1 </summary>
 
-  <blockquote>
-
-<details>
-  <summary> $h$ </summary>
-  
-  ![Image Alt Text](scaling_relation_plots/scalh1.png)
-  
-</details>
-  <details>
-    <summary> $l$ </summary>
-  </details>
-  <details>
-    <summary> $u$ </summary>
-  </details>
-  <details>
-    <summary> $\tau$ </summary>
-  </details>
-  <details>
-    <summary> $b_{\mathrm{iso}}$ </summary>
-  </details>
-  <blockquote>
-  </blockquote>
 
 </details>
 <details>
