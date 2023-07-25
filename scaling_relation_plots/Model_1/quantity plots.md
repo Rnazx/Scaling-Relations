@@ -1,12 +1,12 @@
 
 <details>
-  <summary>Click to view image</summary>
+  <summary> Scale Height</summary>
   
   ![Image Alt Text](scalh1.png)
   
 </details>
 <details>
-  <summary> $h$ </summary>
+  <summary> '$h$' </summary>
   
   ![Image Alt Text](scalh1.png)
   
