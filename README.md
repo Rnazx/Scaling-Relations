@@ -81,7 +81,7 @@ The model number and the letter are automatically chosen from the selection in t
         <!-- Empty cell for the top row -->
         <tr></tr>
         <!-- Button for the top row -->
-        <td align="center" colspan="4">
+        <td align="center" colspan="8">
             <a href="scaling_relation_plots/Model_1" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 1
             </a>
@@ -89,13 +89,13 @@ The model number and the letter are automatically chosen from the selection in t
     </tr>
     <tr>
         <!-- Button for the second row -->
-        <td align="center" colspan="2">
+        <td align="center" colspan="4">
             <a href="https://example.com/link2" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 2a
             </a>
         </td>
         <!-- Button for the second row -->
-        <td align="center" colspan="2">
+        <td align="center" colspan="4">
             <a href="https://example.com/link3" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 2b
             </a>
@@ -105,32 +105,28 @@ The model number and the letter are automatically chosen from the selection in t
         <!-- Button for the third row -->
         <td align="center" colspan="2">
             <a href="https://example.com/link4" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Button 4
+                Model 3a
             </a>
         </td>
         <!-- Button for the third row -->
-        <td align="center" colspan="1">
-            <a href="https://example.com/link5" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Button 5
-            </a>
-        </td>
-        <!-- Button for the third row -->
-        <td align="center" colspan="1">
-            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Button 6
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <!-- Empty cell for the bottom row -->
-        <td></td>
-        <!-- Button for the bottom row -->
         <td align="center" colspan="2">
-            <a href="https://example.com/link7" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Button 7
+            <a href="https://example.com/link5" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model 3b
+            </a>
+        </td>
+        <!-- Button for the third row -->
+        <td align="center" colspan="2">
+            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model 3c
+            </a>
+        </td>
+      <td align="center" colspan="2">
+            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model 3d
             </a>
         </td>
     </tr>
+    
 </table>
 
 </div>
