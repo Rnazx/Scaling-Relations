@@ -1,21 +1,4 @@
-<style>
-  .button {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-right: 10px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
 
-  .button:hover {
-    background-color: #45a049;
-  }
-</style>
 # Scaling Relations Finder
 A general framework to find the scaling relations between magnetic field properties and observables for a model of galactic magnetic fields
 ### Libraries Used
