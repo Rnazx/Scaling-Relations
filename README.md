@@ -70,24 +70,24 @@ The model number and the letter are automatically chosen from the selection in t
     <tr>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
-            <a href="https://example.com/link4" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_3a/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 3a
             </a>
         </td>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
-            <a href="https://example.com/link5" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_3b/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 3b
             </a>
         </td>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
-            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_3c/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 3c
             </a>
         </td>
       <td align="center" colspan="2">
-            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_3d/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 3d
             </a>
         </td>
