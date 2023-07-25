@@ -34,31 +34,7 @@ This repository consists of two main routines. All the expressions are symbolica
 The model number and the letter are automatically chosen from the selection in the widgets. The following are the steps needed to find the scaling relations. The instructions below are given in the order of the blocks of code in the [jupyter notebook file](scaling_relations.ipynb).
 * **Import Dependencies:**
 
-<details>
-  <summary> Model 1 </summary>
 
-  <blockquote>
-
-<details>
-  <summary> $h$ </summary>
-  
-  ![Image Alt Text](scaling_relation_plots/scalh1.png)
-  
-</details>
-  <details>
-    <summary> $l$ </summary>
-  </details>
-  <details>
-    <summary> $u$ </summary>
-  </details>
-  <details>
-    <summary> $\tau$ </summary>
-  </details>
-  <details>
-    <summary> $b_{\mathrm{iso}}$ </summary>
-  </details>
-  <blockquote>
-  </blockquote>
 
 </details>
 <details>
@@ -81,21 +57,21 @@ The model number and the letter are automatically chosen from the selection in t
         <!-- Empty cell for the top row -->
         <tr></tr>
         <!-- Button for the top row -->
-        <td align="center" colspan="4">
-            <a href="scaling_relation_plots/Model%201" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+        <td align="center" colspan="8">
+            <a href="scaling_relation_plots/Model_1" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 1
             </a>
         </td>
     </tr>
     <tr>
         <!-- Button for the second row -->
-        <td align="center" colspan="2">
+        <td align="center" colspan="4">
             <a href="https://example.com/link2" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 2a
             </a>
         </td>
         <!-- Button for the second row -->
-        <td align="center" colspan="2">
+        <td align="center" colspan="4">
             <a href="https://example.com/link3" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 2b
             </a>
@@ -105,32 +81,28 @@ The model number and the letter are automatically chosen from the selection in t
         <!-- Button for the third row -->
         <td align="center" colspan="2">
             <a href="https://example.com/link4" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Button 4
+                Model 3a
             </a>
         </td>
         <!-- Button for the third row -->
-        <td align="center" colspan="1">
-            <a href="https://example.com/link5" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Button 5
-            </a>
-        </td>
-        <!-- Button for the third row -->
-        <td align="center" colspan="1">
-            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Button 6
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <!-- Empty cell for the bottom row -->
-        <td></td>
-        <!-- Button for the bottom row -->
         <td align="center" colspan="2">
-            <a href="https://example.com/link7" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Button 7
+            <a href="https://example.com/link5" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model 3b
+            </a>
+        </td>
+        <!-- Button for the third row -->
+        <td align="center" colspan="2">
+            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model 3c
+            </a>
+        </td>
+      <td align="center" colspan="2">
+            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model 3d
             </a>
         </td>
     </tr>
+    
 </table>
 
 </div>
