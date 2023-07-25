@@ -48,7 +48,7 @@ The model number and the letter are automatically chosen from the selection in t
         <tr></tr>
         <!-- Button for the top row -->
         <td align="center" colspan="8">
-            <a href="scaling_relation_plots/Model_1/quantity plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_1/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model 1
             </a>
         </td>
