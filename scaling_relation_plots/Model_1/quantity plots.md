@@ -1,5 +1,10 @@
 
-
+<details>
+  <summary>Click to view image</summary>
+  
+  ![Image Alt Text](scalh1.png)
+  
+</details>
 <details>
   <summary> $h$ </summary>
   
