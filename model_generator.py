@@ -48,7 +48,7 @@ s_Myr = 1e+6*(365*24*60*60)  # number of seconds in one megayear
 ###################################################################################################
 ########################### Function to generate the model###########################################
 #################################################################################################
-def model_gen(model_no, let='a', not_ren=True, alphareg=1):
+def model_gen(model_no, let = 'a', alphareg=1):
     cs = (gamma*boltz*T/(mu*mh))**Rational(1/2)
     # Function to return the expression of l given the model number
 
@@ -79,7 +79,7 @@ def model_gen(model_no, let='a', not_ren=True, alphareg=1):
         max_mach = mu0
     else:
         # The letter through which subsonic regime is chosen
-        if let == 'a':
+        if let == 'a' or let =='c':
             if model_no == 4:
                 # alternate model for the scale height
                 h = cs/omega
@@ -120,24 +120,16 @@ def model_gen(model_no, let='a', not_ren=True, alphareg=1):
             u = simplify(((4*pi/3)*l*lsn**3*cs**2*(nu))**Fraction(1, 3))
             # max_mach is max(1, u/cs) which is u/cs in supersonic case
             max_mach = u/cs
-    # eddy turnover time
-    taue = simplify(l/u)
-    # Models 1 and 2 do not take into consideration teh effect of supernovae in the correlation time
+    
+    # Models 1 and 2 do not take into consideration the effect of supernovae in the correlation time
     # so we set the renovation time as the eddy turnover time
-    # be more clear
-    if model_no == 2 or model_no == 1:
-        taur = taue
+    # eddy turnover time
+    if let == 'a' or let == 'b':
+        tau = simplify(l/u)
     # expression for the supernovae renovation time
     else:
-        taur = simplify(6.8*s_Myr*(1/4)*(nu*cm_kpc**3*s_Myr/50)**(-1)*(E51)**Fraction(-16, 17)
+        tau = simplify(6.8*s_Myr*(1/4)*(nu*cm_kpc**3*s_Myr/50)**(-1)*(E51)**Fraction(-16, 17)
                         * (n/0.1)**Fraction(19, 17)*(cs/(cm_km*10)))  # does not work if model no = 2
-    # not_ren checks if the regime of correlation time is  is eddy turnover time or renovation time
-    # True means eddy turnover time, False means renovation time
-    if not_ren == False:
-        tau = taue
-    else:
-        tau = taur
-
     # after solving for h we put it into the other expressions
     #define rho again for the supersonic case as we have to input the final expression for h
     rho = sigma/(2*h)
@@ -149,7 +141,7 @@ def model_gen(model_no, let='a', not_ren=True, alphareg=1):
     biso = (Beq*(xio**(1/2)))/max_mach# change the name
     biso = simplify(biso)
     biso = biso.powsimp(force=True)
-
+    
     #Expression for the anisotropic magnetic field considering differential rotation
     bani = biso*(Rational(2/3)*q*omega*tau)**Rational(1/2)# mention the approximations
     bani = simplify(bani)
@@ -175,7 +167,7 @@ def model_gen(model_no, let='a', not_ren=True, alphareg=1):
     Dk = Ralpha*Romega
     Dc = -(pi**5)/32
     # Final expression for mean magnetic field after some approximations
-    Bbar = (pi*Beq*l*(Rk*(Dk/Dc))**Rational(1/2))/h
+    Bbar = (pi*Beq*l*(Rk*(Dk/Dc))**(1/2))/h
     Bbar = simplify(Bbar)
 
     # Expression for the pitch angle of the mean magnetic field
