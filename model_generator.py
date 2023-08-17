@@ -204,16 +204,18 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         # If we include correlation length from the supernovae model from Chamandy and Shukurov (2020)
         #Model 3
         #fsb = 0
-        if lreg == 'supernovae driven':
+        if lreg == 'supernovae-driven':
             ls = 0.14*cm_kpc*(E51)**Fraction(16, 51) * \
                 (n/0.1)**Fraction(-19, 51)*(cs/(cm_km*10))**Fraction(-1, 3)
+            nu = nu
             l = ((Gamma-1)/Gamma)*cl*ls
             l = simplify(l)
         #fsb = 1, Nsb is set to 1 later on as it does not affect the scaling relations
-        elif lreg == 'superbubble driven':
+        elif lreg == 'superbubble-driven':
             #Eqn 10 Chamandy and Sukurov (2020)
             Rsb = 0.53*cm_kpc*(eta/0.1)**Fraction(1, 3)*(Nsb/100)**Fraction(1, 3)*(E51)**Fraction(1, 3)*(n/0.1)**Fraction(-1, 3)*(cs/(cm_km*10))**Fraction(-2, 3)
             ls = Rsb
+            nu = nu/Nsb
             l = ((Gamma-1)/Gamma)*cl*ls
             l = simplify(l)
         # Minimalistic model for l in model 1 and 2. Turbulence is driven at the maximum scale (h)
@@ -281,7 +283,7 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
     biso = biso.powsimp(force=True)
 
     #Expression for the anisotropic magnetic field considering differential rotation
-    bani = biso*(Rational(2/3)*q*omega*tau)**Rational(1/2)# mention the approximations
+    bani = biso*(Rational(2/3)*q*omega*tau)**(1/2)# mention the approximations
     bani = simplify(bani)
     bani = bani.powsimp(force=True)
     # Expression for the mean magnetic field from Dynamo theory
