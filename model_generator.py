@@ -29,6 +29,9 @@ E51 = Symbol('E_51')
 Rk = Symbol('R_k')
 kalpha = Symbol('K_alpha')
 Gamma = Symbol('Gamma')
+eta = Symbol('eta')
+Nsb = Symbol('N_sb')
+
 
 # Defining the general parameters
 u = Symbol('u')
@@ -149,7 +152,7 @@ def model_gen(model_no, let = 'a', alphareg=1):
 
     # Expression for the mean magnetic field from Dynamo theory
     Rk = Symbol('R_k')
-    eta = (1/3)*tau*u**2
+    eta_t = (1/3)*tau*u**2
     #Three regimes for alpha_k are chosen and scaling relations can be found for each regime
     alphak1 = calpha*tau**2*u**2*omega/h
     alphak2 = calpha*tau*u**2/h
@@ -161,8 +164,8 @@ def model_gen(model_no, let = 'a', alphareg=1):
     else:
         alphak = alphak3
     # Substitute alpha_k in the reynolds numbers
-    Ralpha = alphak*h/eta
-    Romega = -q*omega*h**2/eta
+    Ralpha = alphak*h/eta_t
+    Romega = -q*omega*h**2/eta_t
     #Dynamo numbers
     Dk = Ralpha*Romega
     Dc = -(pi**5)/32
@@ -200,29 +203,37 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         n = rho/(mu*mh)
         # If we include correlation length from the supernovae model from Chamandy and Shukurov (2020)
         #Model 3
+        #fsb = 0
         if lreg == 'supernovae driven':
-            lsn = 0.14*cm_kpc*(E51)**Fraction(16, 51) * \
+            ls = 0.14*cm_kpc*(E51)**Fraction(16, 51) * \
                 (n/0.1)**Fraction(-19, 51)*(cs/(cm_km*10))**Fraction(-1, 3)
             l = ((Gamma-1)/Gamma)*cl*lsn
+            l = simplify(l)
+        #fsb = 1, Nsb is set to 1 later on as it does not affect the scaling relations
+        elif lreg == 'superbubble driven':
+            #Eqn 10 Chamandy and Sukurov (2020)
+            Rsb = 0.53*cm_kpc*(eta/0.1)**Fraction(1, 3)*(Nsb/100)**Fraction(1, 3)*(E51)**Fraction(1, 3)*(n/0.1)**Fraction(-1, 3)*(cs/(cm_km*10))**Fraction(-2, 3)
+            ls = Rsb
+            l = ((Gamma-1)/Gamma)*cl*ls
             l = simplify(l)
         # Minimalistic model for l in model 1 and 2. Turbulence is driven at the maximum scale (h)
         else:
             l = simplify(cl*h)
-            lsn = simplify(cl*h)
-        return l, lsn, n, nu
+            ls = simplify(cl*h)
+        return l, ls, n, nu
     # Function to return the expression of u given the regime.
     def choose_ureg(h, ureg):
         # We first choose l according to the regime
-        l, lsn, n, nu = choose_lreg(h, lreg)
-        #If the regime is supernovae driven, the expression for u is taken from Chamandy and Shukurov (2020)
-        #Models 2 and 3
-        if ureg == 'supenovae driven':
-            u = ((4*pi/3)*l*lsn**3*cs**2*(nu))**Fraction(1, 3)
+        l, ls, n, nu = choose_lreg(h, lreg)
         # If u is set equal to the sound speed cs
         #Model 1
-        else :
+        if ureg == 'sound speed' :
             u = mu0*cs
-        return l,u,n,nu
+        #If the regime is supernovae driven, the expression for u is taken from Chamandy and Shukurov (2020)
+        #Models 2 and 3
+        else:
+            u = ((4*pi/3)*l*ls**3*cs**2*(nu))**Fraction(1, 3)            
+        return l,ls,u,n,nu
     # Edge case where in the expression for h, we assume u<<cs (w = u^2 +cs^2)
     if hreg == 'subsonic':
         h = (cs**2)/(3*pi*G*sigmatot)
@@ -233,16 +244,16 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         #First define h as a symbol
         h = Symbol('h')
         #Solve for l and u as a function of h which is just a symbol
-        l,u,n,nu = choose_ureg(h, ureg)
-        # define a new quantity usn where h is set to 1 in the expression for u
-        usn = u.subs(h, 1)
+        l,ls,u,n,nu = choose_ureg(h, ureg)
+        # define a new quantity us where h is set to 1 in the expression for u
+        us = u.subs(h, 1)
         # The standard expression for h raised to the power of 1/(1-2*(exponent of h in u))
-        h = simplify(((usn**2)/(3*pi*G*sigmatot))
+        h = simplify(((us**2)/(3*pi*G*sigmatot))
                             ** (1/(1-2*diff(log(u), h)*h)))#exponent is found by differentiating the log
     #alternate expression for h
     else :
         h = cs/omega
-    l,u,n,nu = choose_ureg(h, ureg)
+    l,ls,u,n,nu = choose_ureg(h, ureg)
     # Define max_mach as max(1,u/cs) which will be used later on in the expression for b_iso
     if hreg == 'supersonic':
         max_mach = u/cs
@@ -255,8 +266,7 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
     # If the regime for tau is supernovae renovation time
     # The quantities are all converted to cgs units for standardization
     else:
-        tau = simplify(6.8*s_Myr*(1/4)*(nu*cm_kpc**3*s_Myr/50)**(-1)*(E51)**Fraction(-16, 17)
-                        * (n/0.1)**Fraction(19, 17)*(cs/(cm_km*10)))  # does not converge if model no = 2
+        tau = simplify(((4/3)*pi*nu*(ls**3))**(-1)) # does not converge if model no = 2
     # after solving for h we put it into the other expressions
     #define rho again for the supersonic case as we have to input the final expression for h
     rho = sigma/(2*h)
@@ -276,7 +286,7 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
     bani = bani.powsimp(force=True)
     # Expression for the mean magnetic field from Dynamo theory
     Rk = Symbol('R_k')
-    eta = (1/3)*tau*u**2
+    eta_t = (1/3)*tau*u**2
     #Three regimes for alpha_k are chosen and scaling relations can be found for each regime
     alphak1 = calpha*tau**2*u**2*omega/h
     alphak2 = calpha*tau*u**2/h
@@ -288,8 +298,8 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
     else:
         alphak = alphak3
     # Substitute alpha_k in the reynolds numbers
-    Ralpha = alphak*h/eta
-    Romega = -q*omega*h**2/eta
+    Ralpha = alphak*h/eta_t
+    Romega = -q*omega*h**2/eta_t
     #Dynamo numbers
     Dk = Ralpha*Romega
     Dc = -(pi**5)/32
