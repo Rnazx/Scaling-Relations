@@ -207,7 +207,7 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         if lreg == 'supernovae driven':
             ls = 0.14*cm_kpc*(E51)**Fraction(16, 51) * \
                 (n/0.1)**Fraction(-19, 51)*(cs/(cm_km*10))**Fraction(-1, 3)
-            l = ((Gamma-1)/Gamma)*cl*lsn
+            l = ((Gamma-1)/Gamma)*cl*ls
             l = simplify(l)
         #fsb = 1, Nsb is set to 1 later on as it does not affect the scaling relations
         elif lreg == 'superbubble driven':
