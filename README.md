@@ -30,12 +30,10 @@ An alternative model is also included where
   \frac{\partial \log(quantity)}{\partial \log(observable)}
 ```
 ## Instructions to run the code
-This repository consists of two main routines. All the expressions are symbolically evaluated in the [model_generator.py](model_generator.py) file using the model_gen function. This function takes in the model number and other regimes described in the manuscript. This function is then used in the [jupyter notebook file](scaling_relations.ipynb) to find the  expression per the chosen regime. We have seven different regimes as described in the manuscript. (describe all the regimes?)
+This repository consists of two main routines. All the expressions are symbolically evaluated in the [model_generator.py](model_generator.py) file using the model_gen function. This function takes in the model number and other regimes described in the manuscript. This function is then used in the [jupyter notebook file](scaling_relations.ipynb) to find the  expression per the chosen regime. We have seven different regimes, as described in the manuscript. (describe all the regimes?)
 The model number and the letter are automatically chosen from the selection in the widgets. The following are the steps needed to find the scaling relations. The instructions below are given in the order of the blocks of code in the [jupyter notebook file](scaling_relations.ipynb).
-* **Import Dependencies:**
-
-
-
+## Model Results
+The final scaling relations are plotted for each model. The value of the exponent is given in the legends. The links below for each model will direct you to the scaling relation plots for that particular model.
 </details>
 
 <!-- Center align the content -->
@@ -49,7 +47,7 @@ The model number and the letter are automatically chosen from the selection in t
         <!-- Button for the top row -->
         <td align="center" colspan="8">
             <a href="scaling_relation_plots/Model_1/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 1
+                Model Alt 1
             </a>
         </td>
     </tr>
@@ -57,38 +55,38 @@ The model number and the letter are automatically chosen from the selection in t
         <!-- Button for the second row -->
         <td align="center" colspan="4">
             <a href="scaling_relation_plots/Model_2a/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 2a
+                Model Alt 2a
             </a>
         </td>
         <!-- Button for the second row -->
         <td align="center" colspan="4">
             <a href="scaling_relation_plots/Model_2b/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 2b
+                Model Alt 2b
             </a>
         </td>
     </tr>
     <tr>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
-            <a href="https://example.com/link4" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 3a
+            <a href="scaling_relation_plots/Model_3a/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model Sa
             </a>
         </td>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
-            <a href="https://example.com/link5" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 3b
+            <a href="scaling_relation_plots/Model_3b/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model Sb
             </a>
         </td>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
-            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 3c
+            <a href="scaling_relation_plots/Model_3c/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model Sc
             </a>
         </td>
       <td align="center" colspan="2">
-            <a href="https://example.com/link6" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 3d
+            <a href="scaling_relation_plots/Model_3d/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+                Model Sd
             </a>
         </td>
     </tr>
