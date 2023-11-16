@@ -1,6 +1,4 @@
 # import libraries
-import numpy as np
-import matplotlib.pyplot as plt
 from sympy import *
 from fractions import Fraction
 
@@ -183,7 +181,7 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
     tanpb = 1/(1+q*omega*tau)
 
     #Put all the expression in a single list
-    quantities = [h, l, u, tau, biso, bani, Bbar, tanpB, tanpb]
+    quantities = [h, l, u, tau, biso, bani, Bbar, tanpB]
 
     return quantities
 
