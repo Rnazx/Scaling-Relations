@@ -9,7 +9,7 @@ A general framework to find the scaling relations between magnetic field propert
 Mean and random components of the magnetic field are modelled based on the following observables:
 ![obs](https://github.com/Rnazx/Scaling-Relations/assets/42196798/bb3e29fe-9bc9-4374-876b-fe5da0455514)
 
-The turbulence and magnetic field models are solved in the [jupyter notebook](https://github.com/Rnazx/Scaling-Relations/blob/master/scaling_relations.ipynb). Different regimes of the model can be chosen in the notebook from the python widgets. 
+The turbulence and magnetic field models are solved in the [jupyter notebook](example.ipynb). Different regimes of the model can be chosen in the notebook from the python widgets. 
 * The model for the scale height is inpired by [Forbes et. al. (2012)](https://ui.adsabs.harvard.edu/abs/2012ApJ...754...48F/abstract) is given by
 ```math
   h= \frac{\zeta w^2}{3\pi G \Sigma_{tot}},
@@ -30,8 +30,10 @@ An alternative model is also included where
   \frac{\partial \log(quantity)}{\partial \log(observable)}
 ```
 ## Instructions to run the code
-This repository consists of two main routines. All the expressions are symbolically evaluated in the [model_generator.py](model_generator.py) file using the model_gen function. This function takes in the model number and other regimes described in the manuscript. This function is then used in the [jupyter notebook file](scaling_relations.ipynb) to find the  expression per the chosen regime. We have seven different regimes, as described in the manuscript. (describe all the regimes?)
-The model number and the letter are automatically chosen from the selection in the widgets. The following are the steps needed to find the scaling relations. The instructions below are given in the order of the blocks of code in the [jupyter notebook file](scaling_relations.ipynb).
+* This repository consists of two main routines. All the expressions are symbolically evaluated in the [model_generator.py](model_generator.py) file using the model_gen function. This function takes in information about the regimes described in the manuscript.
+* This function is then used in the [jupyter notebook file](example.ipynb) to find the  expression per the chosen regime. We have seven different regimes, as described in the manuscript. The regimes are automatically chosen from the selection in the widgets. The following are the steps needed to find the scaling relations.
+* Detailed instructions are available in the order of the blocks of code in the [jupyter notebook file](example.ipynb).
+* To find the scaling relation as per the manuscript, run [manuscript_models.ipynb](manuscript_models.ipynb)
 ## Model Results
 The final scaling relations are plotted for each model. The value of the exponent is given in the legends. The links below for each model will direct you to the scaling relation plots for that particular model.
 </details>
@@ -46,7 +48,7 @@ The final scaling relations are plotted for each model. The value of the exponen
         <tr></tr>
         <!-- Button for the top row -->
         <td align="center" colspan="8">
-            <a href="scaling_relation_plots/Model_1/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_Alt1/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model Alt 1
             </a>
         </td>
@@ -54,13 +56,13 @@ The final scaling relations are plotted for each model. The value of the exponen
     <tr>
         <!-- Button for the second row -->
         <td align="center" colspan="4">
-            <a href="scaling_relation_plots/Model_2a/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_Alt2a/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model Alt 2a
             </a>
         </td>
         <!-- Button for the second row -->
         <td align="center" colspan="4">
-            <a href="scaling_relation_plots/Model_2b/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_Alt2b/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model Alt 2b
             </a>
         </td>
@@ -68,24 +70,24 @@ The final scaling relations are plotted for each model. The value of the exponen
     <tr>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
-            <a href="scaling_relation_plots/Model_3a/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_Sa/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model Sa
             </a>
         </td>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
-            <a href="scaling_relation_plots/Model_3b/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_Sb/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model Sb
             </a>
         </td>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
-            <a href="scaling_relation_plots/Model_3c/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_Sc/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model Sc
             </a>
         </td>
       <td align="center" colspan="2">
-            <a href="scaling_relation_plots/Model_3d/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
+            <a href="scaling_relation_plots/Model_Sd/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
                 Model Sd
             </a>
         </td>
