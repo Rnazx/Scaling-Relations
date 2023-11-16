@@ -33,9 +33,7 @@ An alternative model is also included where
 This repository consists of two main routines. All the expressions are symbolically evaluated in the [model_generator.py](model_generator.py) file using the model_gen function. This function takes in the model number and other regimes described in the manuscript. This function is then used in the [jupyter notebook file](scaling_relations.ipynb) to find the  expression per the chosen regime. We have seven different regimes, as described in the manuscript. (describe all the regimes?)
 The model number and the letter are automatically chosen from the selection in the widgets. The following are the steps needed to find the scaling relations. The instructions below are given in the order of the blocks of code in the [jupyter notebook file](scaling_relations.ipynb).
 ## Model Results
-
-
-
+The final scaling relations are plotted for each model. The value of the exponent is given in the legends. The links below for each model will direct you to the scaling relation plots for that particular model.
 </details>
 
 <!-- Center align the content -->
