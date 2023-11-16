@@ -5,6 +5,11 @@ A general framework to find the scaling relations between magnetic field propert
 * sympy
 * matplotlib
 * ipywidgets
+
+ If these packages are not available in your Python interpreter, you can run
+```
+pip install -r requirements.txt
+```
 ## Code Overview
 Mean and random components of the magnetic field are modelled based on the following observables:
 ![obs](https://github.com/Rnazx/Scaling-Relations/assets/42196798/bb3e29fe-9bc9-4374-876b-fe5da0455514)
