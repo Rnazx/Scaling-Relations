@@ -3,6 +3,7 @@
 A general framework to find the scaling relations between magnetic field properties and observables for a model of galactic magnetic fields
 ### Libraries Used
 * sympy
+* numpy
 * matplotlib
 * ipywidgets
 
