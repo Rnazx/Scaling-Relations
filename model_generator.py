@@ -152,6 +152,7 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
     Rk = Symbol('R_k')
     eta_t = (1/3)*tau*u**2
     #Three regimes for alpha_k are chosen and scaling relations can be found for each regime
+    # Refer to equation 19 from manuscript
     alphak1 = calpha*tau**2*u**2*omega/h
     alphak2 = calpha*tau*u**2/h
     alphak3 = kalpha*u
