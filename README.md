@@ -49,7 +49,7 @@ The model number and the letter are automatically chosen from the selection in t
         <!-- Button for the top row -->
         <td align="center" colspan="8">
             <a href="scaling_relation_plots/Model_1/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 1
+                Model Alt 1
             </a>
         </td>
     </tr>
@@ -57,13 +57,13 @@ The model number and the letter are automatically chosen from the selection in t
         <!-- Button for the second row -->
         <td align="center" colspan="4">
             <a href="scaling_relation_plots/Model_2a/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 2a
+                Model Alt 2a
             </a>
         </td>
         <!-- Button for the second row -->
         <td align="center" colspan="4">
             <a href="scaling_relation_plots/Model_2b/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 2b
+                Model Alt 2b
             </a>
         </td>
     </tr>
@@ -71,24 +71,24 @@ The model number and the letter are automatically chosen from the selection in t
         <!-- Button for the third row -->
         <td align="center" colspan="2">
             <a href="scaling_relation_plots/Model_3a/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 3a
+                Model Sa
             </a>
         </td>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
             <a href="scaling_relation_plots/Model_3b/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 3b
+                Model Sb
             </a>
         </td>
         <!-- Button for the third row -->
         <td align="center" colspan="2">
             <a href="scaling_relation_plots/Model_3c/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 3c
+                Model Sc
             </a>
         </td>
       <td align="center" colspan="2">
             <a href="scaling_relation_plots/Model_3d/quantity%20plots.md" style="display: inline-block; text-align: center; width: 100px; padding: 10px; border: 1px solid #ccc; background-color: #f0f0f0;">
-                Model 3d
+                Model Sd
             </a>
         </td>
     </tr>
