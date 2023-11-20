@@ -66,7 +66,7 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         # If we include correlation length from the supernovae model from Chamandy and Shukurov (2020)
         #Model S
         #fsb = 0
-        if lreg == 'supernovae-driven':
+        if lreg == 'isolated supernova-driven':
             ls = 0.14*cm_kpc*(E51)**Fraction(16, 51) * \
                 (n/0.1)**Fraction(-19, 51)*(cs/(cm_km*10))**Fraction(-1, 3)
             nu = nu
