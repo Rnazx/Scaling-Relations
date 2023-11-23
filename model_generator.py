@@ -67,23 +67,23 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         #Model S
         #fsb = 0
         if lreg == 'isolated supernova-driven':
-            ls = 0.14*cm_kpc*(E51)**Fraction(16, 51) * \
-                (n/0.1)**Fraction(-19, 51)*(cs/(cm_km*10))**Fraction(-1, 3)
+            ls = 0.14*cm_kpc*(E51)**(16/51) * \
+                (n/0.1)**(-19/51)*(cs/(cm_km*10))**(-1/3)
             nu = nu
             l = ((Gamma-1)/Gamma)*cl*ls
-            l = simplify(l)
+            l = (l)
         #fsb = 1, Nsb is set to 1 later on as it does not affect the scaling relations
         elif lreg == 'superbubble-driven':
             #Eqn 10 Chamandy and Sukurov (2020)
-            Rsb = 0.53*cm_kpc*(eta/0.1)**Fraction(1, 3)*(Nsb/100)**Fraction(1, 3)*(E51)**Fraction(1, 3)*(n/0.1)**Fraction(-1, 3)*(cs/(cm_km*10))**Fraction(-2, 3)
+            Rsb = 0.53*cm_kpc*(eta/0.1)**(1/3)*(Nsb/100)**(1/3)*(E51)**(1/3)*(n/0.1)**(-1/3)*(cs/(cm_km*10))**(-2, 3)
             ls = Rsb
             nu = nu/Nsb
             l = ((Gamma-1)/Gamma)*cl*ls
-            l = simplify(l)
+            l = (l)
         # Minimalistic model for l in model Alt 1 and 2. Turbulence is driven at the maximum scale (h)
         else:
-            l = simplify(cl*h)
-            ls = simplify(cl*h)
+            l = (cl*h)
+            ls = (cl*h)
         return l, ls, n, nu
     # Function to return the expression of u given the regime.
     def choose_ureg(h, ureg):
@@ -96,7 +96,7 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         #If the regime is supernovae driven, the expression for u is taken from Chamandy and Shukurov (2020)
         #Models 2 and 3
         else:
-            u = ((4*pi/3)*l*ls**3*cs**2*(nu))**Fraction(1, 3)            
+            u = ((4*pi/3)*l*ls**3*cs**2*(nu))**(1/3)            
         return l,ls,u,n,nu
     # Edge case where in the expression for h, we assume u<<cs (w = u^2 +cs^2)
     if hreg == 'subsonic':
@@ -112,8 +112,8 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         # define a new quantity us where h is set to 1 in the expression for u
         us = u.subs(h, 1)
         # The standard expression for h raised to the power of 1/(1-2*(exponent of h in u))
-        h = simplify(((us**2)/(3*pi*G*sigmatot))
-                            ** (1/(1-2*diff(log(u), h)*h)))#exponent is found by differentiating the log
+        h = ((us**2)/(3*pi*G*sigmatot))
+                            ** (1/(1-2*diff(log(u), h)*h))#exponent is found by differentiating the log
     #alternate expression for h
     else :
         h = cs/omega
@@ -126,28 +126,26 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
     # Regime for the turbulence correlation time
     # If the regime for tau is eddy turnover time
     if taureg == 'eddy turnover time':
-        tau = simplify(l/u)
+        tau = (l/u)
     # If the regime for tau is supernovae renovation time
     # The quantities are all converted to cgs units for standardization
     else:
-        tau = simplify(((4/3)*pi*nu*(ls**3))**(-1)) # does not converge if model no = 2
+        tau = ((4/3)*pi*nu*(ls**3))**(-1) # does not converge if model no = 2
     # after solving for h we put it into the other expressions
     #define rho again for the supersonic case as we have to input the final expression for h
     rho = sigma/(2*h)
     
     # Magnetic field considering equipartition
-    Beq = u*(4*pi*rho)**Rational(1/2)
+    Beq = u*(4*pi*rho)**(1/2)
     
     #Expression for the isotropic magnetic field from Federrath et. al. (2011)
     #max_mach is max(1, u/cs)
     biso = (Beq*(xio**(1/2)))/max_mach# change the name
-    biso = simplify(biso)
-    biso = biso.powsimp(force=True)
+    #biso = biso.powsimp(force=True)
 
     #Expression for the anisotropic magnetic field considering differential rotation
-    bani = biso*(Rational(2/3)*q*omega*tau)**(1/2)# mention the approximations
-    bani = simplify(bani)
-    bani = bani.powsimp(force=True)
+    bani = biso*((2/3)*q*omega*tau)**(1/2)# mention the approximations
+    #bani = bani.powsimp(force=True)
     # Expression for the mean magnetic field from Dynamo theory
     Rk = Symbol('R_k')
     eta_t = (1/3)*tau*u**2
@@ -169,14 +167,12 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
     Dk = Ralpha*Romega
     Dc = -(pi**5)/32
     # Final expression for mean magnetic field after some approximations
-    Bbar = simplify((pi*Beq*l*(Rk*(Dk/Dc))**(1/2))/h)
+    Bbar = (pi*Beq*l*(Rk*(Dk/Dc))**(1/2))/h
 
     # Expression for the pitch angle of the mean magnetic field
     tanpB = -((pi**2)*tau*(u**2))/(12*q*omega*(h**2))
-    tanpB = simplify(tanpB)
     # Substitute tau and l in tanpB
     tanpB = tanpB.subs([(tau, tau), (l, l)])# change the names
-    tanpB = simplify(tanpB)
 
     # Expression for the pitch angle of the random magnetic field
     tanpb = 1/(1+q*omega*tau)
