@@ -6,7 +6,7 @@ A general framework to find the scaling relations between magnetic field propert
 * numpy
 * matplotlib
 * pandas
-* ipywidgets
+* ipywidgets (optional)
 
  If these packages are not available in your Python interpreter, you can run
 ```
