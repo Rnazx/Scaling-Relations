@@ -16,15 +16,18 @@ pip install -r requirements.txt
 ```
 ## Code Overview
 Mean and random components of the magnetic field are modelled based on the following observables:
-<img width="441" alt="image" src="https://github.com/Rnazx/Scaling-Relations/assets/42196798/38131702-5967-49f8-8e11-7e238f44be91">
+<p align="center">
+<img src = "https://github.com/Rnazx/Scaling-Relations/assets/42196798/38131702-5967-49f8-8e11-7e238f44be91" width ="1000" height = "300" alt = "interpolation" />
+</p>
 
-The turbulence and magnetic field models are solved in the [jupyter notebook](example.ipynb). Different regimes of the model can be chosen in the notebook from the python widgets. 
-* The model for the scale height is inpired by [Forbes et. al. (2012)](https://ui.adsabs.harvard.edu/abs/2012ApJ...754...48F/abstract) is given by
+The turbulence and magnetic field models are solved in the [jupyter notebook](example.ipynb). Different regimes of the model can be chosen in the notebook from the Python widgets. 
+
+* The model for the scale height is inspired by [Forbes et. al. (2012)](https://ui.adsabs.harvard.edu/abs/2012ApJ...754...48F/abstract) is given by
 ```math
   h= \frac{\zeta w^2}{3\pi G \Sigma_{tot}},
 ```
 where $1\lesssim\zeta\lesssim20$ is a parameter and $w=\max(u,c_\mathrm{s})$.
-An alternative model is also included where 
+An alternative model is also included, where 
 ```math
   h= \frac{c_s}{\Omega}
 ```
