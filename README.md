@@ -1,5 +1,6 @@
 # Scaling Relations Finder
 [![arXiv:2311.15612](http://img.shields.io/badge/arXiv-1809.03595-B31B1B.svg)](https://arxiv.org/abs/2311.15612)
+[![DOI](https://zenodo.org/badge/101327620.svg)](https://doi.org/10.3847/1538-4357/ad3205)
 
 
 A general framework to find the scaling relations between magnetic field properties and observables for a model of galactic magnetic fields
