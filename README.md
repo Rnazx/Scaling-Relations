@@ -1,6 +1,6 @@
 # Scaling Relations Finder
-[![arXiv:2311.15612](http://img.shields.io/badge/arXiv-1809.03595-B31B1B.svg)](https://arxiv.org/abs/2311.15612)
-[![DOI](https://zenodo.org/badge/101327620.svg)](https://doi.org/10.3847/1538-4357/ad3205)
+[![arXiv:2311.15612](http://img.shields.io/badge/arXiv-2311.15612-red.svg)](https://arxiv.org/abs/2311.15612)
+[![DOI](http://img.shields.io/badge/DOI-10.3847-blue.svg)](https://doi.org/10.3847/1538-4357/ad3205)
 <a href="https://ascl.net/2406.002"><img src="https://img.shields.io/badge/ascl-2406.002-blue.svg?colorB=262255" alt="ascl:2406.002" /></a>
 
 
