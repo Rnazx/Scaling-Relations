@@ -25,10 +25,17 @@ cl = Symbol('C_l')
 kappa = Symbol('kappa')
 E51 = Symbol('E_51')
 Rk = Symbol('R_k')
+zet = Symbol('zeta')
+psi = Symbol('psi')
 kalpha = Symbol('K_alpha')
 Gamma = Symbol('Gamma')
 eta = Symbol('eta')
 Nsb = Symbol('N_sb')
+bet = Symbol('beta')
+alphak = Symbol('alpha_k')
+Gamma = Symbol('Gamma')
+A = Symbol('A')
+K = Symbol('K')
 
 
 # Defining the general parameters
@@ -67,7 +74,7 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         #Model S
         #fsb = 0
         if lreg == 'isolated supernova-driven':
-            ls = 0.14*cm_kpc*(E51)**(16/51) * \
+            ls = psi*0.14*cm_kpc*(E51)**(16/51) * \
                 (n/0.1)**(-19/51)*(cs/(cm_km*10))**(-1/3)
             nu = nu
             l = ((Gamma-1)/Gamma)*cl*ls
@@ -76,14 +83,16 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         elif lreg == 'superbubble-driven':
             #Eqn 10 Chamandy and Sukurov (2020)
             Rsb = 0.53*cm_kpc*(eta/0.1)**(1/3)*(Nsb/100)**(1/3)*(E51)**(1/3)*(n/0.1)**(-1/3)*(cs/(cm_km*10))**(-2, 3)
-            ls = Rsb
+            ls = psi*Rsb
             nu = nu/Nsb
             l = ((Gamma-1)/Gamma)*cl*ls
             l = (l)
         # Minimalistic model for l in model Alt 1 and 2. Turbulence is driven at the maximum scale (h)
+        elif lreg == 'maximum scale-driven':
+            l = psi*(cl*h)
+            ls = psi*(cl*h)
         else:
-            l = (cl*h)
-            ls = (cl*h)
+            raise ValueError("Invalid correlation length (l) regime input")
         return l, ls, n, nu
     # Function to return the expression of u given the regime.
     def choose_ureg(h, ureg):
@@ -95,12 +104,14 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
             u = mu0*cs
         #If the regime is supernovae driven, the expression for u is taken from Chamandy and Shukurov (2020)
         #Models 2 and 3
+        elif ureg == 'supenovae/superbubble-driven':
+            u = ((4*pi/3)*l*ls**3*cs**2*(nu))**(1/3)
         else:
-            u = ((4*pi/3)*l*ls**3*cs**2*(nu))**(1/3)            
+            raise ValueError("Invalid turbulent velocity (u) regime input")          
         return l,ls,u,n,nu
     # Edge case where in the expression for h, we assume u<<cs (w = u^2 +cs^2)
     if hreg == 'subsonic':
-        h = (cs**2)/(3*pi*G*sigmatot)
+        h = (cs**2)/(3*pi*G*((sigmatot/zet)))
     # Edge case where in the expression for h, we assume u>>cs
     # This case is slightly more complicate since u indirectly depends on h through l
     # Hence we need to algebraically solve the equation 
@@ -112,15 +123,16 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         # define a new quantity us where h is set to 1 in the expression for u
         us = u.subs(h, 1)
         # The standard expression for h raised to the power of 1/(1-2*(exponent of h in u))
-        h = ((us**2)/(3*pi*G*sigmatot))
-                            ** (1/(1-2*diff(log(u), h)*h))#exponent is found by differentiating the log
+        h = ((us**2)/(3*pi*G*(sigmatot/zet)))**(1/(1-2*diff(log(u), h)*h))#exponent is found by differentiating the log
     #alternate expression for h
-    else :
+    elif hreg == 'cs/omega':
         h = cs/omega
+    else:
+        raise ValueError("Invalid scale height (h) regime input")
     l,ls,u,n,nu = choose_ureg(h, ureg)
     # Define max_mach as max(1,u/cs) which will be used later on in the expression for b_iso
     if hreg == 'supersonic':
-        max_mach = u/cs
+        max_mach = u/(A*cs)
     else:
         max_mach = 1
     # Regime for the turbulence correlation time
@@ -129,14 +141,16 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
         tau = (l/u)
     # If the regime for tau is supernovae renovation time
     # The quantities are all converted to cgs units for standardization
-    else:
+    elif taureg == 'supernovae/superbubble renovation time':
         tau = ((4/3)*pi*nu*(ls**3))**(-1) # does not converge if model no = 2
     # after solving for h we put it into the other expressions
     #define rho again for the supersonic case as we have to input the final expression for h
+    else: 
+        raise ValueError("Invalid correlation time regime input")
     rho = sigma/(2*h)
     
     # Magnetic field considering equipartition
-    Beq = u*(4*pi*rho)**(1/2)
+    Beq = bet*u*(4*pi*rho)**Rational(1/2)
     
     #Expression for the isotropic magnetic field from Federrath et. al. (2011)
     #max_mach is max(1, u/cs)
@@ -167,7 +181,7 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
     Dk = Ralpha*Romega
     Dc = -(pi**5)/32
     # Final expression for mean magnetic field after some approximations
-    Bbar = (pi*Beq*l*(Rk*(Dk/Dc))**(1/2))/h
+    Bbar = (K*pi*Beq*(l/h)*(Rk*(Dk/Dc))**(0.5))
 
     # Expression for the pitch angle of the mean magnetic field
     tanpB = -((pi**2)*tau*(u**2))/(12*q*omega*(h**2))
@@ -182,6 +196,45 @@ def model_gen_regime(hreg, lreg, ureg, taureg, alphareg='regime 1'):
 
     return quantities
 
+################################################################################################################
+#you can select one of the moel given in the manuscript and use model_seletor function to obtain the corresponding regimes.
+def model_selector(model = 'Model S',subreg = 'a'):
+    if model == 'Model S':
+        lreg='isolated supernova-driven'
+        ureg='supenovae/superbubble-driven'
+        if subreg == 'a' : 
+            hreg='subsonic'
+            taureg='eddy turnover time'
+        elif subreg == 'b':
+            hreg='supersonic'
+            taureg='eddy turnover time'
+        elif subreg == 'c':
+            hreg='subsonic'
+            taureg='supernovae/superbubble renovation time'
+        elif subreg == 'd':
+            hreg='supersonic'
+            taureg='supernovae/superbubble renovation time'
+        else:
+            print('enter a valid subregime')
+    elif model == 'Model Alt 2':
+        lreg='maximum scale-driven'
+        ureg='supenovae/superbubble-driven'
+        if subreg == 'a' : 
+            hreg='subsonic'
+            taureg='eddy turnover time'
+        elif subreg == 'b':
+            hreg='supersonic'
+            taureg='eddy turnover time'
+        else:
+            print('enter a valid subregime')
+    elif model == 'Model Alt 1':
+        lreg='maximum scale-driven'
+        ureg='sound speed'
+        hreg=  'subsonic' #**does not matter as both give same answer**
+        taureg='eddy turnover time'
+    else:
+        print('enter a valid model')
+    return hreg, lreg, ureg, taureg
 
 ##############################################################################################################
 #model generator based on model no

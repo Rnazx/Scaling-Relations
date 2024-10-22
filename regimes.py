@@ -31,7 +31,7 @@ alphareg='regime 1'
 #################################################################################################
 NOTE: The regimes for each of the model described in the manuscript is as follows
 Model S:
-lreg='isolated supernovae-driven'
+lreg='isolated supernova-driven'
 ureg='supenovae/superbubble-driven'
 --> a   
     hreg='subsonic'
